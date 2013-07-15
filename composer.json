@@ -2,7 +2,7 @@
     "name": "p2/security-bundle",
     "type": "symfony-bundle",
     "description": "Enhances the Symfony SecurityBundle",
-    "keywords": [],
+    "keywords": [ "security", "bundle", "symfony" ],
     "homepage": "http://github.com/phillies2k/security-bundle",
     "license": "MIT",
     "authors": [
