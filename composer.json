@@ -20,5 +20,5 @@
         "psr-0": { "P2\\Bundle\\SecurityBundle\\": "" }
     },
     "target-dir": "P2/Bundle/SecurityBundle",
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
