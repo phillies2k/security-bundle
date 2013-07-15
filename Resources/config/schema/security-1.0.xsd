@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns="http://symfony.com/schema/dic/p2/security"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://symfony.com/schema/dic/p2/security"
+            elementFormDefault="qualified">
+
+    <xsd:element name="config" type="config" />
+
+    <xsd:complexType name="config">
+        <xsd:attribute name="document" type="xsd:string" />
+        <xsd:attribute name="manager" type="xsd:string" />
+        <xsd:attribute name="encoder" type="xsd:string" />
+    </xsd:complexType>
+
+</xsd:schema>

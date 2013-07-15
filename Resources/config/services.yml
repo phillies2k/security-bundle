@@ -1,0 +1,8 @@
+parameters:
+    p2_security.security.user_provider.class: P2\Bundle\SecurityBundle\Security\UserProvider
+
+services:
+
+    # Security UserProvider
+    p2_security.security.user_provider:
+        class: %p2_security.security.user_provider.class%

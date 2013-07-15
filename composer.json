@@ -1,0 +1,24 @@
+{
+    "name": "p2/security-bundle",
+    "type": "symfony-bundle",
+    "description": "Enhances the Symfony SecurityBundle",
+    "keywords": [],
+    "homepage": "http://github.com/phillies2k/security-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Philipp Boes",
+            "email": "mostgreedy@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "2.3.*",
+        "symfony/security-bundle": "2.3.*"
+    },
+    "autoload": {
+        "psr-0": { "P2\\Bundle\\SecurityBundle\\": "" }
+    },
+    "target-dir": "P2/Bundle/SecurityBundle",
+    "minimum-stability": "stable"
+}
