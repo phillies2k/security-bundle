@@ -10,6 +10,7 @@
 namespace P2\Bundle\SecurityBundle\Security;
 
 use Symfony\Component\Security\Core\Role\Role;
+use Symfony\Component\Security\Core\User\UserInterface as SecurityUserInterface;
 
 /**
  * Class User
@@ -224,6 +225,29 @@ abstract class User implements UserInterface
     public function isEnabled()
     {
         return $this->enabled;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function isEqualTo(SecurityUserInterface $user)
+    {
+        if ($this->getUsername() !== $user->getUsername()) {
+
+            return false;
+        }
+
+        if ($this->getPassword() !== $user->getPassword()) {
+
+            return false;
+        }
+
+        if ($this->getSalt() !== $user->getSalt()) {
+
+            return false;
+        }
+
+        return true;
     }
 
     /**

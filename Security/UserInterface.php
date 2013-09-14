@@ -10,8 +10,9 @@
 namespace P2\Bundle\SecurityBundle\Security;
 
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
+use Symfony\Component\Security\Core\User\EquatableInterface;
 
-interface UserInterface extends AdvancedUserInterface
+interface UserInterface extends AdvancedUserInterface, EquatableInterface
 {
     /**
      * Returns the email address used to authenticate this user.
