@@ -123,30 +123,54 @@ abstract class User implements UserInterface
     }
 
     /**
-     * Returns the roles granted to the user.
-     *
-     * <code>
-     * public function getRoles()
-     * {
-     *     return array('ROLE_USER');
-     * }
-     * </code>
-     *
-     * Alternatively, the roles might be stored on a ``roles`` property,
-     * and populated in any number of different ways when the user object
-     * is created.
-     *
-     * @return Role[] The user roles
+     * {@inheritDoc}
      */
     public function getRoles()
     {
         return $this->roles;
     }
 
+    /**
+     * @param string $username
+     * @return $this
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param string $email
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
 
     /**
      * @param string $password
-     * @return self
+     * @return $this
      */
     public function setPassword($password)
     {
@@ -156,14 +180,55 @@ abstract class User implements UserInterface
     }
 
     /**
-     * Checks whether the user's account has expired.
+     * {@inheritDoc}
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param string $salt
+     * @return $this
+     */
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSalt()
+    {
+        return $this->salt;
+    }
+
+    /**
+     * Set enabled
      *
-     * Internally, if this method returns false, the authentication system
-     * will throw an AccountExpiredException and prevent login.
-     *
-     * @return Boolean true if the user's account is non expired, false otherwise
-     *
-     * @see AccountExpiredException
+     * @param boolean $enabled
+     * @return $this
+     */
+    public function setEnabled($enabled)
+    {
+        $this->enabled = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function isEnabled()
+    {
+        return $this->enabled;
+    }
+
+    /**
+     * {@inheritDoc}
      */
     public function isAccountNonExpired()
     {
@@ -171,14 +236,7 @@ abstract class User implements UserInterface
     }
 
     /**
-     * Checks whether the user is locked.
-     *
-     * Internally, if this method returns false, the authentication system
-     * will throw a LockedException and prevent login.
-     *
-     * @return Boolean true if the user is not locked, false otherwise
-     *
-     * @see LockedException
+     * {@inheritDoc}
      */
     public function isAccountNonLocked()
     {
@@ -186,14 +244,7 @@ abstract class User implements UserInterface
     }
 
     /**
-     * Checks whether the user's credentials (password) has expired.
-     *
-     * Internally, if this method returns false, the authentication system
-     * will throw a CredentialsExpiredException and prevent login.
-     *
-     * @return Boolean true if the user's credentials are non expired, false otherwise
-     *
-     * @see CredentialsExpiredException
+     * {@inheritDoc}
      */
     public function isCredentialsNonExpired()
     {
@@ -201,30 +252,10 @@ abstract class User implements UserInterface
     }
 
     /**
-     * Removes sensitive data from the user.
-     *
-     * This is important if, at any given point, sensitive information like
-     * the plain-text password is stored on this object.
-     *
-     * @return void
+     * {@inheritDoc}
      */
     public function eraseCredentials()
     {
-    }
-
-    /**
-     * Checks whether the user is enabled.
-     *
-     * Internally, if this method returns false, the authentication system
-     * will throw a DisabledException and prevent login.
-     *
-     * @return Boolean true if the user is enabled, false otherwise
-     *
-     * @see DisabledException
-     */
-    public function isEnabled()
-    {
-        return $this->enabled;
     }
 
     /**
@@ -248,85 +279,5 @@ abstract class User implements UserInterface
         }
 
         return true;
-    }
-
-    /**
-     * Returns the password used to authenticate the user.
-     *
-     * This should be the encoded password. On authentication, a plain-text
-     * password will be salted, encoded, and then compared to this value.
-     *
-     * @return string The password
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * Returns the salt that was originally used to encode the password.
-     *
-     * This can return null if the password was not encoded using a salt.
-     *
-     * @return string The salt
-     */
-    public function getSalt()
-    {
-        return $this->salt;
-    }
-
-    /**
-     * Returns the username used to authenticate the user.
-     *
-     * @return string The username
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
-
-    /**
-     * Returns the email address used to authenticate this user.
-     *
-     * @return string The email address.
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param string $email
-     * @return self
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * @param string $username
-     * @return self
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-
-        return $this;
-    }
-
-    /**
-     * Set enabled
-     *
-     * @param boolean $enabled
-     * @return self
-     */
-    public function setEnabled($enabled)
-    {
-        $this->enabled = $enabled;
-
-        return $this;
     }
 }
