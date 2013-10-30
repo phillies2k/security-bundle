@@ -8,7 +8,6 @@
     <xsd:element name="config" type="config" />
 
     <xsd:complexType name="config">
-        <xsd:attribute name="document" type="xsd:string" />
         <xsd:attribute name="manager" type="xsd:string" />
         <xsd:attribute name="encoder" type="xsd:string" />
     </xsd:complexType>
