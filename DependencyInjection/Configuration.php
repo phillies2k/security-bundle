@@ -28,7 +28,6 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('document')->cannotBeEmpty()->end()
                 ->scalarNode('manager')->cannotBeEmpty()->end()
                 ->scalarNode('encoder')->defaultValue('sha256')->end()
             ->end();

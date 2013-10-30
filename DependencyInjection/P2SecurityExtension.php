@@ -35,10 +35,6 @@ class P2SecurityExtension extends Extension implements PrependExtensionInterface
             throw new InvalidArgumentException('manager must be set in p2_security configuration.');
         }
 
-        if (! isset($config['document'])) {
-            throw new InvalidArgumentException('document must be set in p2_security configuration.');
-        }
-
         $container->setAlias('p2_security.security.user_manager', $config['manager']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
