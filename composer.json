@@ -13,8 +13,8 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/framework-bundle": "2.3.*",
-        "symfony/security-bundle": "2.3.*"
+        "symfony/framework-bundle": "2.6.*",
+        "symfony/security-bundle": "2.6.*"
     },
     "autoload": {
         "psr-0": { "P2\\Bundle\\SecurityBundle\\": "" }
